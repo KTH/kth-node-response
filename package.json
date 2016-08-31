@@ -1,0 +1,20 @@
+{
+  "name": "kth-node-response",
+  "version": "1.0.0",
+  "description": "Module for handling HTTP responses in Node.js applications.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KTH/kth-node-response"
+  },
+  "dependencies": {},
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "response",
+    "http",
+    "https",
+    "json"
+  ],
+  "private": true
+}
