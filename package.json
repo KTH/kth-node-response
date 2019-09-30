@@ -4,7 +4,8 @@
   "description": "Module for handling HTTP responses in Node.js applications.",
   "main": "index.js",
   "scripts": {
-    "test": "echo 'ok'"
+    "test": "echo 'ok'",
+    "build": "echo 'ok'"
   },
   "repository": {
     "type": "git",
