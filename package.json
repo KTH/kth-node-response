@@ -1,5 +1,5 @@
 {
-  "name": "kth-node-response",
+  "name": "@kth/kth-node-response",
   "version": "1.0.0",
   "description": "Module for handling HTTP responses in Node.js applications.",
   "main": "index.js",
@@ -17,7 +17,7 @@
     "url": "https://github.com/KTH"
   },
   "bugs": {
-    "url": "https://github.com/KTH/kth-node-cosmos-db/issues"
+    "url": "https://github.com/KTH/kth-node-response/issues"
   },
   "dependencies": {},
   "license": "MIT",
@@ -27,6 +27,5 @@
     "http",
     "https",
     "json"
-  ],
-  "private": false
+  ]
 }
