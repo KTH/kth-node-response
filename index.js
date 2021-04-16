@@ -3,24 +3,24 @@
  */
 
 module.exports = (function () {
-  var CONST_CONTENT_TYPE = 'Content-Type'
-  var CONST_CONTENT_DISP = 'Content-Disposition'
-  var CONST_LOCATION = 'Location'
-  var CONST_TYPE_JSON = 'application/json; charset=utf-8'
-  var CONST_TYPE_XLS = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-  var CONST_TYPE_SVG = 'image/svg+xml'
-  var CONST_TYPE_TEXT = 'text/plain'
-  var CONST_VARY = 'Vary'
-  var CONST_VARY_ACCEPT_ENCODING = 'Accept-Encoding'
+  const CONST_CONTENT_TYPE = 'Content-Type'
+  const CONST_CONTENT_DISP = 'Content-Disposition'
+  const CONST_LOCATION = 'Location'
+  const CONST_TYPE_JSON = 'application/json; charset=utf-8'
+  const CONST_TYPE_XLS = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+  const CONST_TYPE_SVG = 'image/svg+xml'
+  const CONST_TYPE_TEXT = 'text/plain'
+  const CONST_VARY = 'Vary'
+  const CONST_VARY_ACCEPT_ENCODING = 'Accept-Encoding'
 
-  function jsonErrorResponse (res, statusCode, messageKey, errKey, errorMessage) {
+  function jsonErrorResponse(res, statusCode, messageKey, errKey, errorMessage) {
     res.statusCode = statusCode
     res.header(CONST_CONTENT_TYPE, CONST_TYPE_JSON)
-    var errorJsonResponse = { messageKey: messageKey, errKey: errKey, errorMessage: errorMessage }
+    const errorJsonResponse = { messageKey, errKey, errorMessage }
     res.send(errorJsonResponse)
   }
 
-  function _notFound (res, message) {
+  function _notFound(res, message) {
     res.statusCode = 404
     if (message) {
       res.send(message)
@@ -29,7 +29,7 @@ module.exports = (function () {
     }
   }
 
-  function _error (res, err) {
+  function _error(res, err) {
     res.statusCode = 500
     if (err) {
       res.send('500 Internal Server Error: ' + err)
@@ -38,42 +38,42 @@ module.exports = (function () {
     }
   }
 
-  function _json (res, data, statusCode) {
+  function _json(res, data, statusCode) {
     res.statusCode = statusCode || 200
     res.header(CONST_CONTENT_TYPE, CONST_TYPE_JSON)
     res.send(data)
   }
 
-  function _redirect (res, location) {
+  function _redirect(res, location) {
     res.statusCode = 301
     res.header(CONST_LOCATION, location)
     res.end()
   }
 
-  function _unauthorized (res, data) {
+  function _unauthorized(res, data) {
     res.statusCode = 401
     res.header(CONST_CONTENT_TYPE, CONST_TYPE_JSON)
     res.send(data || 'unauthorized')
   }
 
-  function _jsonError (res, messageKey, errKey, errorMessage) {
+  function _jsonError(res, messageKey, errKey, errorMessage) {
     jsonErrorResponse(res, 500, messageKey, errKey, errorMessage)
   }
 
-  function _excel (res, data, fileName) {
+  function _excel(res, data, fileName) {
     res.statusCode = 200
     res.setHeader(CONST_CONTENT_DISP, 'attachment; filename="' + fileName + '"')
     res.setHeader(CONST_CONTENT_TYPE, CONST_TYPE_XLS)
     res.end(data, 'binary')
   }
 
-  function _text (res, data) {
+  function _text(res, data) {
     res.statusCode = 200
     res.setHeader(CONST_CONTENT_TYPE, CONST_TYPE_TEXT)
     res.end(data)
   }
 
-  function _svg (res, data) {
+  function _svg(res, data) {
     res.statusCode = 200
     res.setHeader(CONST_CONTENT_TYPE, CONST_TYPE_SVG)
     res.setHeader(CONST_VARY, CONST_VARY_ACCEPT_ENCODING)
@@ -120,7 +120,7 @@ module.exports = (function () {
      * messageKey and errKey should be keys that match
      * a language translation construct
      */
-    jsonErrorResponse: jsonErrorResponse,
+    jsonErrorResponse,
 
     /**
      * Status code 200 with content-type application/vnd.openxmlformats
@@ -141,6 +141,6 @@ module.exports = (function () {
      *
      * Returns a plain text string
      */
-    text: _text
+    text: _text,
   }
 })()
