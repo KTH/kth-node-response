@@ -56,6 +56,12 @@ module.exports = (function () {
     res.send(data || 'unauthorized')
   }
 
+  function _forbidden(res, data) {
+    res.statusCode = 403
+    res.header(CONST_CONTENT_TYPE, CONST_TYPE_JSON)
+    res.send(data || 'forbidden')
+  }
+
   function _jsonError(res, messageKey, errKey, errorMessage) {
     jsonErrorResponse(res, 500, messageKey, errKey, errorMessage)
   }
@@ -105,6 +111,11 @@ module.exports = (function () {
      * Status code 401 with content-type application/json
      */
     unauthorized: _unauthorized,
+
+    /**
+     * Status code 403 with content-type application/json
+     */
+     forbidden: _forbidden,
 
     /**
      * Status code 500 with content-type application/json
