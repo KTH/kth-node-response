@@ -32,7 +32,7 @@
   "devDependencies": {
     "@kth/eslint-config-kth": "^3.0.10",
     "eslint": "^8.20.0",
-    "husky": "^8.0.1",
+    "husky": "^9.1.4",
     "prettier": "^2.7.1",
     "pretty-quick": "^3.1.3"
   },
