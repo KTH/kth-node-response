@@ -1,6 +1,6 @@
 {
   "name": "@kth/kth-node-response",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Module for handling HTTP responses in Node.js applications.",
   "main": "index.js",
   "files": [
