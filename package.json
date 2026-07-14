@@ -2,7 +2,6 @@
   "name": "@kth/kth-node-response",
   "version": "1.0.0",
   "description": "Module for handling HTTP responses in Node.js applications.",
-  "automaticPublish": "true",
   "main": "index.js",
   "scripts": {
     "lint": "eslint --quiet",
@@ -24,6 +23,9 @@
     "url": "https://github.com/KTH/kth-node-response/issues"
   },
   "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
   "keywords": [
     "node",
     "response",
