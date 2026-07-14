@@ -3,12 +3,18 @@
   "version": "1.0.0",
   "description": "Module for handling HTTP responses in Node.js applications.",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
   "scripts": {
     "lint": "eslint --quiet",
     "lint-v": "eslint",
     "test": "jest",
-    "build": "echo 'ok'",
-    "prepare": "bash -c 'if [ -f ./node_modules/.bin/husky ]; then husky install; fi'"
+    "build": "",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
