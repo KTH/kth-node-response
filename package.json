@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint --quiet",
     "lint-v": "eslint",
-    "test": "echo 'ok'",
+    "test": "jest",
     "build": "echo 'ok'",
     "prepare": "bash -c 'if [ -f ./node_modules/.bin/husky ]; then husky install; fi'"
   },
@@ -37,6 +37,7 @@
     "@kth/eslint-config-kth": "^4.1.0",
     "eslint": "^9.39.5",
     "husky": "^9.1.7",
+    "jest": "^30.4.2",
     "lint-staged": "^17.0.8",
     "prettier": "^3.9.5"
   },
